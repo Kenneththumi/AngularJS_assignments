@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <title>Simple Angular Auth</title>
+    <script src="js/angular.min.js"></script>
+     <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="JWT.js"></script>
+  </head>
+
+  <body>
+    <div ng-app="app" ng-controller="Main as main" alighn="center">
+    <h1>Login</h1>
+  <form class="form-group form-inline">  
+
+
+    <input type="text" ng-model="main.username" placeholder="username"><br>
+    <input type="password" ng-model="main.password" placeholder="password"><br>
+    <br>
+
+    <button ng-click="main.login()" ng-hide="main.isAuthed()">Login</button>
+
+    <button ng-click="main.register()">Register</button>
+    
+    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+
+    <button ng-click="main.getQuote()">get quote</button>
+    <br><br>
+    {{main.message}}
+
+    <br><br><br>
+
+ </form>
+   
+    </div>
+
+ </body>   
+</html>

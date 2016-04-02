@@ -1,0 +1,48 @@
+<!-- /*
+*Cytonn Tech.
+*@author Kenneth Mwangi <kthumi@cytonn.com>
+*
+*
+*/ -->
+<!-- customer table(management) -->
+<div ng-controller="Ctrl">
+    <h3>View the customers/ manage</h3>
+    Search: <input type="search" class="fa fa-search" ng-model="searchcustomer">
+    <br>
+    <br>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <td>Fname</td>
+        <td>Lname</td>
+        <td>Orders Placed</td>
+        <td></td>
+        <td></td>
+      </thead>
+      <tr ng-repeat="profile in Profiles | filter:searchcustomer">
+        <td>
+          <input type="text" ng-model="profile.name" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{profile.name }}</span>
+        </td>
+        <td>
+          <input type="text" ng-model="profile.country" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.country }}</span>
+        </td>
+        
+        <td>
+            <p>{{ profile.order}}</p> 
+        </td>
+        <td>
+           <button class="btn btn-small btn-info"  ng-click="order($index)">Place order</button>
+        </td>
+        <td>
+          <button class="btn btn-warning" ng-click="edit($index)" ng-hide="profile.editable">Edit</button>
+          <button class="btn btn-success" ng-click="save($index)" ng-show="profile.editable">Save</button>
+          <button class="btn btn-danger" ng-click="delete($index)"> Delete</button>
+        </td>
+      </tr>
+    </table>
+    <br>
+
+    <button class="btn btn-info"  ng-click="add()">Add Customers</button>
+
+  </div>

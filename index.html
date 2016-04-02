@@ -1,0 +1,46 @@
+<!-- 
+*Cytonn Tech.
+*@author Kenneth Mwangi <kthumi@cytonn.com>
+*
+*
+-->
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="utf-8";>
+    <title>AngularJS: UI-Router </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <!-- UI-Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  <!-- app -->
+   <script src="app.js"></script>
+  <!-- controllers -->
+  <script src="controllers.js"></script>
+  <!-- routing -->
+  <script src="routing.js"></script>
+
+</head>
+
+<body class="container" ng-app="myapp">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Customer management</a>
+      </div>
+      <ul class="nav navbar-nav">
+      </ul>
+    </div>
+  </nav>
+<div class="row">
+    <div class="span12">
+      <div class="well" ui-view></div>        
+    </div>
+  </div>       
+
+</body>
+
+</html>
